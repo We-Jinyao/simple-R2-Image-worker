@@ -2,7 +2,7 @@ const config = {
   VALID_TOKEN: "123", 
   DOMAIN: "example.com",
 }
-BUCKET = R2-Variable
+BUCKET = R2
 
 
 addEventListener("fetch", (event) => {
