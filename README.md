@@ -1,4 +1,5 @@
 # simple-R2-Image-worker 使用R2桶存储图像
+
 A simple woeker script to use cf r2 as image bed.
 
 ## 实现的功能
@@ -17,9 +18,9 @@ A simple woeker script to use cf r2 as image bed.
 
 4.编辑Worker触发器,通过以下两种方式之一绑定自定义域名：
 
-    - 在自定义域中添加你的域名,例如： `pic.example.com` ,Cloudflare会自动为你设置DNS
+  - 在自定义域中添加你的域名,例如： `pic.example.com` ,Cloudflare会自动为你设置DNS
     
-    - 在路由中添加动态路由，例如： `pic.example.com/*` ( `/*`是必要的,区域可以不用选择),然后在DNS中为对应的域名解析并开启CDN,解析地址可以使用除了`1.1.1.1`等特殊地址以外的任何地址
+  - 在路由中添加动态路由，例如： `pic.example.com/*` ( `/*`是必要的,区域可以不用选择),然后在DNS中为对应的域名解析并开启CDN,解析地址可以使用除了`1.1.1.1`等特殊地址以外的任何地址
     
 5.编辑Woker,用[worker.js](https://github.com/We-Jinyao/simple-R2-Image-worker/blob/main/worker.js "worker")中的内容替换,将变量名设置为你绑定R2桶的变量,`token`设置为你自定义的鉴权码,然后保存并部署Worker. 至此你可以在Cloudflare R2控制面板处上传图像, 然后使用你的自定义域名+文件名访问图片, 例如： `pic.example.com/filename.png` 
 
