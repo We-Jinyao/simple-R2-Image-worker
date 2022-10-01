@@ -23,8 +23,15 @@ A simple woeker script to use cf r2 as image bed.
     
 5.编辑Woker,用[worker.js](https://github.com/We-Jinyao/simple-R2-Image-worker/blob/main/worker.js "worker")中的内容替换,将变量名设置为你绑定R2桶的变量,`token`设置为你自定义的鉴权码,然后保存并部署Worker. 至此你可以在Cloudflare R2控制面板处上传图像, 然后使用你的自定义域名+文件名访问图片, 例如： `pic.example.com/filename.png` 
 
+
 6. 在 **ShareX主界面** - **目标** - **自定义上传目标** 中新增一个上传器,将 **方法** 设置为 **POST**, **请求URL** 设置为你的自定义域名+'/upload', 例如： `https://pic.example.com/upload`, **正文** 设置为 **Binary**, **URL参数** 设置为： token:你自定义的token, filename:{filename}, 第二个参数为可选的, 下面的 **URL**设置为 `{json:image}` , 然后将图片上传器设置为刚刚编辑的图片上传器, 测试图片上传, 如因网络问题出现502错误可以在  **ShareX主界面** - **应用程序设置** - **代理** 中设置代理
+
 
 7. Api上传需要在参数中指明token和filename（可选）, body为图片, Headers 中说明 `content-type`和`content-length`
 
+
 8. 删除图片可直接在Cloudflare Dashboard中删除，或者参考 [ShareX-R2-Cloudflare-Workers](https://github.com/Cherry/ShareX-R2-Cloudflare-Workers)（这也是本项目灵感来源） 设置删除Url
+
+## Liscense
+
+![MIT](https://img.shields.io/github/license/We-Jinyao/simple-R2-Image-worker)
