@@ -14,7 +14,7 @@ A simple woeker script to use cf r2 as image hosting.
 
 2.在Workers中新建一个服务
 
-3.在Workers的设置-变量页面绑定R2存储桶，变量名称命名为`R2-Variable`或者你喜欢的任何其他名称
+3.在Workers的设置-变量页面绑定R2存储桶，变量名称命名为`R2`或者你喜欢的任何其他名称
 
 4.编辑Worker触发器,通过以下两种方式之一绑定自定义域名：
 
