@@ -1,6 +1,6 @@
 # simple-R2-Image-worker 使用R2桶存储图像
 
-A simple woeker script to use cf r2 as image bed.
+A simple woeker script to use cf r2 as image hosting.
 
 ## 实现的功能
 
