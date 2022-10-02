@@ -15,7 +15,7 @@ async function handleRequest(request) {
 
   switch (request.method) {
     case "GET":
-      const object = await BUCKET.get(key); 
+      const object = await BUCKET.get(decodeURI(key); 
 
       if (!object) {
         return new Response("Object Not Found", { status: 404 });
@@ -78,16 +78,13 @@ async function handleRequest(request) {
 
 	    const returnUrl = new URL(request.url);
 	    returnUrl.searchParams.delete('filename');
-      returnUrl.searchParams.delete('token');
-	    returnUrl.pathname = `/file/${filename}`;
-		  returnUrl.host = config.DOMAIN;
-		  returnUrl.pathname = filename;
+      	    returnUrl.searchParams.delete('token');
+
+	    returnUrl.host = config.DOMAIN;
+	    returnUrl.pathname = filename;
 
 
-	    return new Response(JSON.stringify({
-		    success: true,
-		    image: returnUrl.href,
-	    }), {
+	    return new Response('{"success": true, "image": "https://'+returnUrl.host+returnUrl.pathname+'"}' , {
 		    headers: {
 			  "content-type": "application/json",
 		    },
