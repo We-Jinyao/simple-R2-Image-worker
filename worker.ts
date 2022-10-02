@@ -15,7 +15,7 @@ async function handleRequest(request) {
 
   switch (request.method) {
     case "GET":
-      const object = await BUCKET.get(decodeURI(key); 
+      const object = await BUCKET.get(decodeURI(key)); 
 
       if (!object) {
         return new Response("Object Not Found", { status: 404 });
